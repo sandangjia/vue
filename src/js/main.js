@@ -10,6 +10,9 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 
+//导入全局过滤器
+import './globalConfig.js'
+
 
 //2.0 导入mint-ui 组件库
 import MintUI from 'mint-ui';
