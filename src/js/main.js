@@ -8,10 +8,16 @@ import router from './router.js';
 import VueResource from 'vue-resource';
 // 5.2 将 VueResource 注册到 Vue上
 Vue.use(VueResource);
+// 5.3 设置请求的baseURL
+import config from './globalConfig.js';
+Vue.http.options.root = config.baseUrl;
 
+// 6.0 注册图片预览插件  ()
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview);
 
 //导入全局过滤器
-import './globalConfig.js'
+import './globalFilters.js';
 
 
 //2.0 导入mint-ui 组件库

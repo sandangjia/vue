@@ -8,7 +8,7 @@
         <hr>
         <div class='content' v-html='info.content'></div>
 
-        <comment></comment>
+        <comment :artId='id'></comment>
     </div>
 
 </template>
@@ -28,11 +28,10 @@ import comment from '../subcom/comment.vue';
         },
         methods:{
             getNewsInfo(){
-                var url = 'http://127.0.0.1:8899/api/getnew/'+ this.id;
+                var url = 'api/getnew/'+ this.id;
                 this.$http.get(url).then(res =>{
                     if(res.body.status == 0){
                         this.info = res.body.message[0];
-                        console.log(this.info);
                     }else{
                         console.log('获取新闻详情失败');
                     }

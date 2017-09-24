@@ -30,7 +30,7 @@
         },  
         methods:{
             getNewList(){
-                var url = 'http://127.0.0.1:8899/api/getnewslist';
+                var url = 'api/getnewslist';
                 this.$http.get(url).then(res=>{
                     if(res.body.status == 0){
                         this.list = res.body.message;
